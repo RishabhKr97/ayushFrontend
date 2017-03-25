@@ -1,0 +1,50 @@
+<div>
+  <h4>Search by</h4>
+  <ul>
+    <li>
+      <ul title="Discipline">
+        <li><input type="checkbox">Ayurveda</li>
+        <li><input type="checkbox">Yoga</li>
+        <li><input type="checkbox">Unnani</li>
+        <li><input type="checkbox">Siddhi</li>
+        <li><input type="checkbox">Homeopathy</li>
+      </ul>
+    </li>
+    <li title="Location">
+      <input type="text" placeholder="Enter Location" [(ngModel)]="searchLoc">
+    </li>
+    <li title="Name">
+      <input type="text" placeholder="Enter Name" [(ngModel)]="searchName">
+    </li>
+  </ul>
+</div>
+<h3>Search results </h3>
+<table >
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Location</th>
+    <th>Descipline</th>
+    <th>Specialities</th>
+    <th>Ratings</th>
+  </tr>
+  </thead>
+  <tr *ngFor="let i of institutes| searchPipes:searchLoc  ;" >
+    <td>{{i.name}}</td>
+    <td>{{i.location}}</td>
+    <td>
+      <ul >
+        <li *ngFor="let d of i.disciplines">{{d}}</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li *ngFor="let s of i.specialities">{{s}}</li>
+      </ul>
+    </td>
+
+    <td>{{i.ratings}}</td>
+  </tr>
+</table>
+
+
