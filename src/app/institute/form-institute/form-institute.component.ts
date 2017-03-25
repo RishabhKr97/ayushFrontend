@@ -3,8 +3,7 @@ import {IInstitute} from "../institute.interface";
 import {ListComponent} from "../list/list.component";
 @Component({
   selector: 'app-form-institute',
-  templateUrl: './form-institute.component.html',
-  styleUrls: ['./form-institute.component.css']
+  templateUrl: './form-institute.component.html'
 })
 export class FormInstituteComponent implements OnInit {
 

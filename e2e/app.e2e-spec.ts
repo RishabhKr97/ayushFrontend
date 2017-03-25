@@ -1,10 +1,10 @@
-import { SihfePage } from './app.po';
+import { Untitled1Page } from './app.po';
 
-describe('sihfe App', () => {
-  let page: SihfePage;
+describe('untitled1 App', () => {
+  let page: Untitled1Page;
 
   beforeEach(() => {
-    page = new SihfePage();
+    page = new Untitled1Page();
   });
 
   it('should display message saying app works', () => {
