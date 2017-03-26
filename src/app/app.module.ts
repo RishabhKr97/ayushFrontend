@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -9,6 +9,7 @@ import { ListComponent } from './institute/list/list.component';
 import {LocFilterPipe, NameFilterPipe} from "./institute/list/filter.pipe";
 import { SearchPipesPipe } from './institute/list/search-pipes.pipe';
 import { FormInstituteComponent } from './institute/form-institute/form-institute.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { FormInstituteComponent } from './institute/form-institute/form-institut
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

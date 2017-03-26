@@ -1,1 +1,142 @@
-<p>InsertForm Here</p>
+<h1>Data Driven</h1>
+<form [formGroup]="myForm">
+
+  <div class="form-group">
+    <label for="instituteName">Institute Name:</label>
+
+    <input type="text"
+           class="form-control"
+           id="instituteName"
+           formControlName="name"
+    >
+  </div>
+
+  <div class="form-group">
+    <label for="instituteEmail">E-Mail</label>
+
+    <input type="email"
+           class="form-control"
+           id="instituteEmail"
+           formControlName="email">
+  </div>
+
+
+  <div class="form-group">
+    <label for="institutePassword">Password</label>
+
+    <input type="password"
+           class="form-control"
+           id="institutePassword"
+           formControlName="password">
+  </div>
+
+  <div class="form-group">
+    <label for="institutePhone">Phone</label>
+
+    <input type="text"
+           class="form-control"
+           id="institutePhone"
+           formControlName="phone">
+  </div>
+
+
+  <div class="form-group">
+    <label for="instituteAddress">Address</label>
+
+    <input type="text"
+           class="form-control"
+           id="instituteAddress"
+           formControlName="address">
+  </div>
+
+
+  <h3>Clinical Services</h3>
+  <div formArrayName="services" *ngFor="let service of myForm.controls.services.controls;let i=index;">
+    <div [formGroupName]="i">
+      <div class="form-group">
+        <label for="specialityDropdown">Speciality Name</label>
+
+        <select name="specialities" id="specialityDropdown" formControlName="specialityName">
+          <option *ngFor="let speciality of specialities;let k = index;" [selected]="(k == 3)" value="{{k}}">
+            {{speciality}}
+          </option>
+        </select>
+      </div>
+
+      <div formArrayName="doctors" *ngFor="let doctor of service.controls.doctors.controls;let j=index;">
+        <div [formGroupName]="j">
+          <div class="form-group">
+            <label for="doctorName">Name</label>
+
+            <input type="text"
+                   class="form-control"
+                   id="doctorName"
+                   formControlName="name"
+            >
+          </div>
+          <div class="form-group">
+            <label for="doctorExperience">Experience</label>
+
+            <input type="text"
+                   class="form-control"
+                   id="doctorExperience"
+                   formControlName="experience"
+            >
+          </div>
+          <div class="form-group">
+            <label for="doctorRatings">Rating</label>
+
+            <input type="number"
+                   class="form-control"
+                   id="doctorRatings"
+                   formControlName="ratings"
+            >
+          </div>
+          <div class="form-group">
+            <label for="doctorDiscipline">Discipline</label>
+
+            <input type="text"
+                   class="form-control"
+                   id="doctorDiscipline"
+                   formControlName="discipline"
+            >
+          </div>
+
+        </div>
+
+      </div>
+      <button type="button" class="btn btn-default" (click)="onAddDoctor(i)">Add Doctor</button>
+    </div>
+
+  </div>
+  <button type="button" class="btn btn-default" (click)="onAddService()">Add Service</button>
+  <h3>Diagnostic Services</h3>
+  <div formArrayName="tests" *ngFor="let test of myForm.controls.tests.controls;let l=index">
+    <div [formGroupName]="l">
+      <div class="form-group">
+        <label for="testName">Test Name</label>
+
+        <input type="text"
+               class="form-control"
+               id="testName"
+               formControlName="testName"
+        >
+      </div>
+      <div class="form-group">
+        <label for="testFee">Test Fee</label>
+
+        <input type="number"
+               class="form-control"
+               id="testFee"
+               formArrayName="testFee"
+        >
+      </div>
+
+    </div>
+
+  </div>
+  <button type="button" class="btn btn-default" (click)="onAddTest()">Add Diagnostic Services</button>
+
+  <br>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

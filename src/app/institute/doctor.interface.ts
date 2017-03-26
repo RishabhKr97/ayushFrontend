@@ -1,5 +1,6 @@
-export interface IDoctor{
+export interface Doctor{
   name: string;
+  experience:string;
   ratings: number;
-  speciality: string[];
+  discipline:string;
 }
