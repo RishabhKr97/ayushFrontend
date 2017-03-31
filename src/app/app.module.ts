@@ -9,6 +9,7 @@ import { ListComponent } from './institute/list/list.component';
 import {LocFilterPipe, NameFilterPipe} from "./institute/list/filter.pipe";
 import { SearchPipesPipe } from './institute/list/search-pipes.pipe';
 import { FormInstituteComponent } from './institute/form-institute/form-institute.component';
+import {AddformService} from "./addform.service";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { FormInstituteComponent } from './institute/form-institute/form-institut
     HttpModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AddformService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

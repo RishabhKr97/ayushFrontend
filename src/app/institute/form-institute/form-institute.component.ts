@@ -1,97 +1,128 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-
-
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {AddformService} from "../../addform.service";
 @Component({
   selector: 'app-form-institute',
   templateUrl: './form-institute.component.html'
 })
 export class FormInstituteComponent implements OnInit {
+
   specialities = ['Liver', 'Heart', 'Kidney', 'Dental'];
-  myForm: FormGroup;
+  institutionForm: FormGroup;
+  clinicForm: FormGroup;
+  diagnosticForm: FormGroup;
+
   email_check_pattern = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?";
   @ViewChild('select') mySelect;
 
-  constructor(private _fb: FormBuilder) {
-    this.myForm = new FormGroup(
-      {
-        name: new FormControl('', Validators.required),
-        email: new FormControl('', [Validators.required, Validators.pattern(this.email_check_pattern)]),
-        password: new FormControl('', Validators.required),
-        phone: new FormControl('', Validators.required),
-        address: new FormControl('', Validators.required),
-
-        services: new FormArray([
-          new FormGroup({
-            specialityName: new FormControl('', Validators.required),
-            doctors: new FormArray([
-              new FormGroup({
-                name: new FormControl('', Validators.required),
-                experience: new FormControl('', Validators.required),
-                ratings: new FormControl('', Validators.required),
-                discipline: new FormControl('', Validators.required),
-              })
-            ])
-          }),
-
-        ]),
-        tests:new FormArray([
-          new FormGroup({
-            testName:new FormControl('',Validators.required),
-            testFee:new FormControl('',Validators.required)
-          })
-        ])
+  constructor(private _fb: FormBuilder, private institutionDetailService: AddformService) {
+    this.institutionDetailService.getForm().subscribe(
+      (data) => {
+        console.log(data.institution);
+        this.institutionForm.setValue(data.institution);
       }
     );
+    this.createForm();
   }
 
   ngOnInit() {
 
   }
+
   initService() {
 
     return this._fb.group({
-      specialityName: new FormControl('', Validators.required),
+      speciality_name: new FormControl('', Validators.required),
       doctors: new FormArray([
         new FormGroup({
-          name: new FormControl('', Validators.required),
-          experience: new FormControl('', Validators.required),
-          ratings: new FormControl('', Validators.required),
-          discipline: new FormControl('', Validators.required),
+          doctor_name: new FormControl('', Validators.required),
+          department: new FormControl('', Validators.required),
         })
       ])
     });
   }
-  initDoctor(){
+
+  initDoctor() {
     return this._fb.group({
-      name: new FormControl('', Validators.required),
-      experience: new FormControl('', Validators.required),
-      ratings: new FormControl('', Validators.required),
-      discipline: new FormControl('', Validators.required),
+      doctor_name: new FormControl('', Validators.required),
+      department: new FormControl('', Validators.required),
 
     });
   }
+
   initTest() {
     return this._fb.group({
-      testName:new FormControl('',Validators.required),
-      testFee:new FormControl('',Validators.required)
+      test_name: new FormControl('', Validators.required),
+      test_fee: new FormControl('', Validators.required)
     });
   }
-  onAddDoctor(index:number) {
-    const control = (<[FormGroup]>(<FormArray>this.myForm.controls['services']).controls);
-   const control2 = <FormArray>control[index].controls['doctors'];
+
+  onAddDoctor(index: number) {
+    const control = (<[FormGroup]>(<FormArray>this.clinicForm.controls['services']).controls);
+    const control2 = <FormArray>control[index].controls['doctors'];
     control2.push(this.initDoctor());
 
   }
-  onAddService(){
-    const control = <FormArray>this.myForm.controls['services'];
+
+  onAddService() {
+    const control = <FormArray>this.clinicForm.controls['services'];
     control.push(this.initService());
 
   }
-  onAddTest(){
-    const control = <FormArray>this.myForm.controls['tests'];
+
+  onAddTest() {
+    const control = <FormArray>this.diagnosticForm.controls['tests'];
     control.push(this.initTest());
   }
 
+  formSubmit() {
+    this.institutionDetailService.sendForm(this.institutionForm.value).subscribe();
+  }
 
+
+  private createForm() {
+    this.institutionForm = new FormGroup(
+      {
+        id: new FormControl(''),
+        name: new FormControl('', Validators.required),
+        email: new FormControl('', [Validators.required, Validators.pattern(this.email_check_pattern)]),
+        //password: new FormControl('' ),
+        contact_number: new FormControl('', Validators.required),
+        about: new FormControl('', Validators.required),
+        website: new FormControl('', Validators.required),
+        photo: new FormControl('', Validators.required),
+
+      }
+    );
+    this.clinicForm = new FormGroup({
+
+        services: new FormArray([
+          new FormGroup({
+            speciality_name: new FormControl(''),
+            doctors: new FormArray([
+              new FormGroup({
+                doctor_name: new FormControl(''),
+                department: new FormControl(''),
+              })
+            ])
+          })
+
+        ])
+      }
+    );
+    this.diagnosticForm = new FormGroup({
+      tests: new FormArray([
+        new FormGroup({
+          test_name: new FormControl('',),
+          test_fee: new FormControl('',)
+        })
+      ])
+    });
+  }
+  sendClinic(){
+    this.institutionDetailService.sendForm(this.clinicForm);
+  }
+  sendTest(){
+    this.institutionDetailService.sendForm(this.diagnosticForm);
+  }
 }
