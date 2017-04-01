@@ -29,7 +29,7 @@
     <th>Ratings</th>
   </tr>
   </thead>
-  <tr *ngFor="let i of institutes| searchPipes:searchLoc;" >
+  <tr  >
     <td>{{i.name}}</td>
     <td>{{i.location}}</td>
     <td>
@@ -38,9 +38,7 @@
       </ul>
     </td>
     <td>
-      <ul>
-        <li *ngFor="let s of i.specialities">{{s}}</li>
-      </ul>
+
     </td>
 
     <td>{{i.ratings}}</td>

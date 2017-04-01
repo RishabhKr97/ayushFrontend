@@ -96,7 +96,7 @@ export class PatientVideoComponent implements OnInit {
         this.onConnect();
         setTimeout(()=>{
           this.onVideo();
-        },200);
+        },2000);
     }
 
 }
