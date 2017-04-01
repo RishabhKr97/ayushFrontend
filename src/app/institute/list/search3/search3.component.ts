@@ -8,29 +8,30 @@ import {Dcs} from "./dcs";
 })
 export class Search3Component implements OnInit {
 
-  searchT: string='';
-  Dname:string='';
-  g(a:number):void{
-    let arr:string[]=['Ayurveda','Yoga','Unnani','Siddha','Homeopathy'];
-    if(this.Dname===arr[a])
-      this.Dname='';
-    else
-      this.Dname=arr[a];
-    console.log(this.Dname);
+  searchDCS: string='';
+
+  flag1:boolean=false;
+  flag2:boolean=false;
+  flag3:boolean=false;
+  flag4:boolean=false;
+  flag0:boolean=false;
+
+  f0():void{
+    this.flag0=!this.flag0;
+  }
+  f1():void{
+    this.flag1=!this.flag1;
+  }
+  f2():void{
+    this.flag2=!this.flag2;
+  }
+  f3():void{
+    this.flag3=!this.flag3;
+  }
+  f4():void{
+    this.flag4=!this.flag4;
   }
 
-  d(n:number):string{
-    if(n===0)
-      return'Ayurveda';
-    if(n===1)
-      return'Yoga';
-    if(n===2)
-      return'Unnani';
-    if(n===3)
-      return'Siddha';
-    if(n===4)
-      return'Homeopathy';
-  }
 
   dcsArray:Dcs[]=[
     { name:'X-ray',
@@ -38,7 +39,7 @@ export class Search3Component implements OnInit {
       rating: 5,
       type:'C',
       id:'a01',
-      department:[1],
+      department:['Ayurveda','Yoga'],
       location:{
         address:'1,abc',
         state: 'Delhi',
@@ -51,7 +52,7 @@ export class Search3Component implements OnInit {
       rating: 3,
       type:'D',
       id:'a01',
-      department:[1],
+      department:['Homeopathy'],
       location:{
         address:'2,asdv',
         state: 'Delhi',

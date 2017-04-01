@@ -1,17 +1,17 @@
 <div class="row">
   <div class="'col-lg-4">
-    <input type="text" [(ngModel)]="searchT" placeholder="enter service(D.C.S)'s name here!" >
+    <input type="text" [(ngModel)]="searchDCS" placeholder="enter service(D.C.S)'s name here!" >
   </div>
   <div class="col-lg-8">
-    <button (click)="g(0)">Ayurveda  </button>
-    <button (click)="g(1)">Yoga      </button>
-    <button (click)="g(2)">Unnani    </button>
-    <button (click)="g(3)">Siddha    </button>
-    <button (click)="g(4)">Homeopathy</button>
+    <input type="checkbox" value="0" (click)="f0()" [(ngModel)]="flag0">Ayurveda  <br>
+    <input type="checkbox" value="1" (click)="f1()" [(ngModel)]="flag1">Yoga      <br>
+    <input type="checkbox" value="2" (click)="f2()" [(ngModel)]="flag2">Unnani    <br>
+    <input type="checkbox" value="3" (click)="f3()" [(ngModel)]="flag3">Siddha    <br>
+    <input type="checkbox" value="4" (click)="f4()" [(ngModel)]="flag4">Homeopathy<br>
   </div>
 </div>
 
-<div class="row" *ngFor="let i of dcsArray | dcsName:searchT:Dname ;">
+<div class="row" *ngFor="let i of dcsArray | dcsName:searchDCS:flag0:flag1:flag2:flag3:flag4;">
   <div class="col-lg-1"><p>Service Name: {{i.name}}</p></div>
   <div class="col-lg-2"><p>Institute: {{i.institutionName}} </p></div>
   <div class="col-lg-3"><p>Location<br></p>
@@ -26,7 +26,7 @@
   <div class="col-lg-1"><p>rating: {{i.rating}}</p></div>
   <div class="col-lg-2">
     <ul>
-      <li *ngFor="let n of i.department">{{d(n)}}</li>
+      <li *ngFor="let n of i.department">{{n}}</li>
     </ul>
   </div>
 </div>

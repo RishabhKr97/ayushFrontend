@@ -5,7 +5,7 @@ export interface Dcs {
   rating: number;
   type:string;
   id:string;
-  department:number[];
+  department:string[];
   location:Location;
 
 }

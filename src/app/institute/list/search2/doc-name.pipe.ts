@@ -4,8 +4,12 @@ import {Doctor} from './doctor';
   name: 'docName'
 })
 export class DocNamePipe implements PipeTransform {
-  transform(value: Doctor[], arg1: string, arg2:boolean[]): Doctor[] {
+  transform(value: Doctor[], arg1: string , f0:boolean, f1:boolean, f2:boolean, f3:boolean, f4:boolean): Doctor[] {
               console.log('INSIDE PIPE YEe!');
+
+    let arg2:boolean[]=[f0,f1,f2,f3,f4];
+
+              console.log(arg2);
 
     if(arg1.length===0 && arg2.indexOf(true)===-1){
       console.log('returning all elements');
@@ -13,7 +17,7 @@ export class DocNamePipe implements PipeTransform {
     }
 
     if(arg1.length===0 && arg2.indexOf(true)!=-1){
-      console.log('filtering by department');
+      console.log('filtering by department '+arg2);
 
       let filtered:Doctor[]=[];
       for(let x of value){
@@ -31,7 +35,7 @@ export class DocNamePipe implements PipeTransform {
       return filtered;
     }
     if(arg1.length!==0)
-      console.log('filtering by name');
+      console.log('filtering by name '+arg1 );
 
     var semifiltered: Doctor[] = [];
       var pattern = new RegExp(arg1 + '+', 'i');
