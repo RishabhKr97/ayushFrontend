@@ -15,6 +15,7 @@ import {Search1Component} from "./institute/list/search1/search1.component";
 import {Search2Component} from "./institute/list/search2/search2.component";
 import {Search3Component} from "./institute/list/search3/search3.component";
 import {DocNamePipe} from "./institute/list/search2/doc-name.pipe";
+import { DcsNamePipe } from './institute/list/search3/dcs-name.pipe';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import {DocNamePipe} from "./institute/list/search2/doc-name.pipe";
     Search1Component,
     Search2Component,
     Search3Component,
-    FormInstituteComponent, DoctorVideoComponent, PatientVideoComponent,InstiNamePipe,DocNamePipe
+    FormInstituteComponent, DoctorVideoComponent, PatientVideoComponent,InstiNamePipe,DocNamePipe, DcsNamePipe
 
 ],
   imports: [
