@@ -5,7 +5,7 @@ export class IInstitute{
   name: string;
   photos: string[];
   ratings: number;
-  disciplines: string[];
+  department: string[];
   location: string;
   about: string;
   services : clinicalServices[];

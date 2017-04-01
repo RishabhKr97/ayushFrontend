@@ -1,50 +1,50 @@
-<div>
+<div class="container">
   <h4>Search by</h4>
-  <ul>
-    <li>
-      <ul title="Discipline">
-        <li><input type="checkbox">Ayurveda</li>
-        <li><input type="checkbox">Yoga</li>
-        <li><input type="checkbox">Unnani</li>
-        <li><input type="checkbox">Siddhi</li>
-        <li><input type="checkbox">Homeopathy</li>
-      </ul>
-    </li>
-    <li title="Location">
-      <input type="text" placeholder="Enter Location" [(ngModel)]="searchLoc">
-    </li>
-    <li title="Name">
-      <input type="text" placeholder="Enter Name" [(ngModel)]="searchName">
-    </li>
-  </ul>
+  <div class="row">
+    <div class="col-lg-8">
+      <button (click)="flip(0)" >Ayurveda  </button>
+      <button (click)="flip(1)">Yoga      </button>
+      <button (click)="flip(2)">Unnani    </button>
+      <button (click)="flip(3)">Siddhi    </button>
+      <button (click)="flip(4)">Homeopathy</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4">
+      <h5>Location</h5>
+      <input type="text" placeholder="Enter location Name" [(ngModel)]="searchLoc" >
+    </div>
+    <div class="col-lg-4">
+      <h5>Name</h5>
+      <input type="text" placeholder="Enter Name" [(ngModel)]="searchName" >
+    </div>
+    <div class="col-lg-4">
+      <h5>Dr's Name</h5>
+      <input type="text" placeholder="Enter Doctor's name" [(ngModel)]="searchDrName" >
+    </div>
+  </div>
 </div>
-<h3>Search results </h3>
-<table >
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th>Location</th>
-    <th>Descipline</th>
-    <th>Specialities</th>
-    <th>Ratings</th>
-  </tr>
-  </thead>
-  <tr *ngFor="let i of institutes| searchPipes:searchLoc  ;" >
-    <td>{{i.name}}</td>
-    <td>{{i.location}}</td>
-    <td>
+<div class="row">
+  <h4>Search results </h4>
+  <div id="searchResults" *ngFor="let i of institutes | locFilter:searchLoc | depFilter:departmentFlag | nameFilter:searchName   " >
+    <div class="col-md-3"><b>Name:</b>   {{i.name}}</div>
+    <div class="col-md-3"><b>Location:</b>  {{i.location}}</div>
+    <div class="col-md-2">
+      <b>Disciplines</b>
       <ul >
-        <li *ngFor="let d of i.disciplines">{{d}}</li>
+        <li *ngFor="let d of i.department">{{d}}</li>
       </ul>
-    </td>
-    <td>
+    </div>
+    <div class="col-md-2">
+      <b>Specialities</b>
       <ul>
         <li *ngFor="let s of i.specialities">{{s}}</li>
       </ul>
-    </td>
-
-    <td>{{i.ratings}}</td>
-  </tr>
-</table>
+    </div>
+    <div class="col-md-2">
+      <b>Rating:</b> {{i.ratings}}
+    </div>
+  </div>
+</div>
 
 
