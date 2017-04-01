@@ -4,14 +4,13 @@ import 'rxjs/Rx';
 
 @Injectable()
 export class AddformService {
-  id = 'http://192.168.1.109:3000/institutions/1';
+  id = 'http://192.168.1.109:3000/institutions/1/clinicals';
 
   constructor(private _http: Http) {
   }
 
   sendForm(form: any) {
-    return this._http.put(this.id , form);
-
+    return this._http.post(this.id , form);
   }
 
   getForm() {

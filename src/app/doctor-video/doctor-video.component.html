@@ -1,0 +1,10 @@
+<div *ngIf="!keysent">
+<button (click)="onStarChat()">Start Chat</button>
+</div>
+<div *ngIf="keysent">
+  <h1>My Key - {{myId}}</h1>
+  <input type="text" [(ngModel)]="otherId">
+  <button (click)="onConnect()">Connect</button>
+  <button (click)="onVideo()">VideoChat</button>
+</div>
+<video #myVideo></video>

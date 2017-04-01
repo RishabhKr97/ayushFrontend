@@ -16,10 +16,23 @@ export class FormInstituteComponent implements OnInit {
   @ViewChild('select') mySelect;
 
   constructor(private _fb: FormBuilder, private institutionDetailService: AddformService) {
+    // this.institutionDetailService.getForm().subscribe(
+    //   (data) => {
+    //     console.log(data.institution);
+    //     this.institutionForm.setValue(data.institution);
+    //   }
+    // );
     this.institutionDetailService.getForm().subscribe(
       (data) => {
-        console.log(data.institution);
-        this.institutionForm.setValue(data.institution);
+        console.log(data);
+        for (let i = 0; i < data.length; i++) {
+          this.onAddService();
+          for (let j = 1; j < data[i].doctors.length; j++) {
+            this.onAddDoctor(i);
+          }
+         const control= (<[FormGroup]>(<FormArray>this.clinicForm.controls['services']).controls);
+          control[i].setValue(data[i]);
+        }
       }
     );
     this.createForm();
@@ -119,10 +132,13 @@ export class FormInstituteComponent implements OnInit {
       ])
     });
   }
-  sendClinic(){
-    this.institutionDetailService.sendForm(this.clinicForm);
+
+  sendClinic() {
+
+    this.institutionDetailService.sendForm(this.clinicForm.value).subscribe();
   }
-  sendTest(){
+
+  sendTest() {
     this.institutionDetailService.sendForm(this.diagnosticForm);
   }
 }

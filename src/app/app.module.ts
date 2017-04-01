@@ -10,13 +10,17 @@ import {LocFilterPipe, NameFilterPipe} from "./institute/list/filter.pipe";
 import { SearchPipesPipe } from './institute/list/search-pipes.pipe';
 import { FormInstituteComponent } from './institute/form-institute/form-institute.component';
 import {AddformService} from "./addform.service";
+import { DoctorVideoComponent } from './doctor-video/doctor-video.component';
+import { PatientVideoComponent } from './patient-video/patient-video.component';
+import {VideoCallService} from "./video-call.service";
+
 
 @NgModule({
   declarations: [
     AppComponent,
     InstituteComponent,
     ListComponent,
-    NameFilterPipe , LocFilterPipe, SearchPipesPipe, FormInstituteComponent
+    NameFilterPipe , LocFilterPipe, SearchPipesPipe, FormInstituteComponent, DoctorVideoComponent, PatientVideoComponent
 
 ],
   imports: [
@@ -25,7 +29,7 @@ import {AddformService} from "./addform.service";
     HttpModule,
     ReactiveFormsModule
   ],
-  providers: [AddformService],
+  providers: [AddformService,VideoCallService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
