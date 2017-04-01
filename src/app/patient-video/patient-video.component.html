@@ -1,0 +1,10 @@
+<div *ngIf="!gotkey">
+  <button (click)="onPatientCall()">Check Doctor Video</button>
+</div>
+<div *ngIf="gotkey">
+  <h1>My Key - {{myId}}</h1>
+  <input type="text" [(ngModel)]="otherId">
+  <button (click)="onConnect()">Connect</button>
+  <button (click)="onVideo()">VideoChat</button>
+</div>
+<video #myVideo></video>

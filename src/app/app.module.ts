@@ -6,24 +6,21 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { InstituteComponent } from './institute/institute.component';
 import { ListComponent } from './institute/list/list.component';
+import {LocFilterPipe, NameFilterPipe} from "./institute/list/filter.pipe";
+import { SearchPipesPipe } from './institute/list/search-pipes.pipe';
 import { FormInstituteComponent } from './institute/form-institute/form-institute.component';
 import {AddformService} from "./addform.service";
-import {LocFilterPipe} from "./institute/list/loc-filter.pipe";
-import {NameFilterPipe} from "./institute/list/name-filter.pipe";
-import {DepFilterPipe} from "./institute/list/dep-filter.pipe";
-import { DrNameFilterPipe } from './institute/list/dr-name-filter.pipe';
-import { Search1Component } from './institute/list/search1/search1.component';
-import { Search2Component } from './institute/list/search2/search2.component';
-import { Search3Component } from './institute/list/search3/search3.component';
-import { InstiNamePipe } from './institute/list/search1/insti-name.pipe';
-import { DocNamePipe } from './institute/list/search2/doc-name.pipe';
+import { DoctorVideoComponent } from './doctor-video/doctor-video.component';
+import { PatientVideoComponent } from './patient-video/patient-video.component';
+import {VideoCallService} from "./video-call.service";
+
 
 @NgModule({
   declarations: [
     AppComponent,
     InstituteComponent,
     ListComponent,
-    NameFilterPipe , LocFilterPipe, FormInstituteComponent, DepFilterPipe, DrNameFilterPipe, Search1Component, Search2Component, Search3Component, InstiNamePipe, DocNamePipe
+    NameFilterPipe , LocFilterPipe, SearchPipesPipe, FormInstituteComponent, DoctorVideoComponent, PatientVideoComponent
 
 ],
   imports: [
@@ -32,7 +29,7 @@ import { DocNamePipe } from './institute/list/search2/doc-name.pipe';
     HttpModule,
     ReactiveFormsModule
   ],
-  providers: [AddformService],
+  providers: [AddformService,VideoCallService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
