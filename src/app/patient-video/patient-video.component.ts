@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {isNullOrUndefined} from "util";
+import {isNullOrUndefined, log} from "util";
 import {VideoCallService} from "../video-call.service";
 
 @Component({
@@ -29,7 +29,7 @@ export class PatientVideoComponent implements OnInit {
     let message = 'Message From' + this.myId;
     this.myId = this.peer.id;
     if (isNullOrUndefined(this.myId)) {
-      alert('Could Not connect Now!');
+     // alert('Could Not connect Now!');
     }
     if (!isNullOrUndefined(this.otherId)) {
       let conn = this.peer.connect(this.otherId);
@@ -38,7 +38,7 @@ export class PatientVideoComponent implements OnInit {
       });
     }
     else {
-      alert('Key Null or Undefined!');
+     // alert('Key Null or Undefined!');
     }
   }
 
@@ -63,13 +63,14 @@ export class PatientVideoComponent implements OnInit {
   onPatientCall() {
     this.videoService.recieveDoctorkey().subscribe(
       (data) => {
-        this.doctorId = data.id;
+        console.log(data);
+        this.doctorId = data.room_key;
+        this.otherId=this.doctorId;
+        this.gotkey=true;
+
       }
     );
-    if (this.doctorId == null) {
-      alert("Doctor Not available yet!");
-    }
-    else {
+
       let video = this.myVideo.nativeElement;
       this.peer = new Peer({key: this.apikey});
       let n = <any>navigator;
@@ -92,7 +93,10 @@ export class PatientVideoComponent implements OnInit {
         });
       });
 
-
+        this.onConnect();
+        setTimeout(()=>{
+          this.onVideo();
+        },200);
     }
-  }
+
 }

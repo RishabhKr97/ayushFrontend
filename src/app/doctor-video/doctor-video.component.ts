@@ -32,6 +32,8 @@ export class DoctorVideoComponent implements OnInit {
     let message = 'Message From' + this.myId;
     this.myId = this.peer.id;
     let doctorId=this.myId;
+    myService.sendDoctorKey(doctorId).subscribe();
+    console.log(doctorId);
     if (isNullOrUndefined(this.myId)) {
       alert('Could Not connect Now!');
     }
@@ -39,7 +41,7 @@ export class DoctorVideoComponent implements OnInit {
       let conn = this.peer.connect(this.otherId);
       conn.on('open', function () {
        // conn.send(message);
-        myService.sendDoctorKey(doctorId);
+
       });
     }
     else {
