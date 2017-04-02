@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Appointment Receipt</h2>
+  <div *ngIf="receipt">
+        <span>Appointment Reference ID: {{receipt.id}}</span><br>
+        <span>Name of Patient: {{receipt.first_name}} {{receipt.last_name}}</span><br>
+        <span>Phone number: {{receipt.mobile}}</span><br>
+        <span>E-mail: {{receipt.email}}</span><br>
+        <span>Name of Doctor: {{receipt.doctor_name}}</span><br>
+        <span>Department: {{receipt.department}}</span><br>
+        <span>Name of Institute: {{receipt.name}}</span><br>
+        <span>Amount: {{receipt.rate}}</span><br>
+        <span>Consultation began at: {{receipt.BeginTime | date:'h:mma'}}</span><br>
+        <span>Consultation completed at: {{receipt.EndTime | date:'h:mma'}}</span><br>
+
+    </div>
+  </div>
+
+
+

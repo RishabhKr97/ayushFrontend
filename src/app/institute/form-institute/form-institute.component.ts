@@ -22,19 +22,19 @@ export class FormInstituteComponent implements OnInit {
     //     this.institutionForm.setValue(data.institution);
     //   }
     // );
-    this.institutionDetailService.getForm().subscribe(
-      (data) => {
-        console.log(data);
-        for (let i = 0; i < data.length; i++) {
-          this.onAddService();
-          for (let j = 1; j < data[i].doctors.length; j++) {
-            this.onAddDoctor(i);
-          }
-         const control= (<[FormGroup]>(<FormArray>this.clinicForm.controls['services']).controls);
-          control[i].setValue(data[i]);
-        }
-      }
-    );
+    // this.institutionDetailService.getForm().subscribe(
+    //   (data) => {
+    //     console.log(data);
+    //     for (let i = 0; i < data.length; i++) {
+    //       this.onAddService();
+    //       for (let j = 1; j < data[i].doctors.length; j++) {
+    //         this.onAddDoctor(i);
+    //       }
+    //      const control= (<[FormGroup]>(<FormArray>this.clinicForm.controls['services']).controls);
+    //       control[i].setValue(data[i]);
+    //     }
+    //   }
+    // );
     this.createForm();
   }
 

@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>Appointment History</h2>
+  <div *ngIf="appt">
+    <div *ngFor="let item of appt;">
+      <div *ngIf="item.status === 1 ">
+        <span>Date of Appointment:{{item.date}}</span>
+        <span *ngIf="mode===true">Mode of Consultation: Online</span><br>
+        <span *ngIf="mode===false">Mode of Consultation: Offline</span><br>
+        <span>Begin Time: {{item.BeginTime | date:'h:mma' }}</span><br>
+        <span>End Time: {{item.EndTime | date:'h:mma'}}</span><br>
+        <span>Your Appointment is pending</span></div><br><br>
+      <div *ngIf="!(item.status === 1)">
+        <span>Date of Appointment:{{item.date}}</span>
+        <span *ngIf="mode===true">Mode of Consultation: Online</span><br>
+        <span *ngIf="mode===false">Mode of Consultation: Offline</span><br>
+        <span>Begin Time: {{item.BeginTime | date:'h:mma'}}</span><br>
+        <span>End Time: {{item.EndTime | date:'h:mma'}}</span><br>
+        <span>Your Appointment is completed</span><br><br>
+      </div>
+    </div>
+  </div>
+</div>
+
+
