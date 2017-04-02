@@ -9,11 +9,11 @@ export class Search1Component implements OnInit {
   searchName: string='';
   institutesArray: Institute[]=[
     {
-      name:'A Institute',
-      uid:'a1',
+      name:'Green Leaf Ayurveda Institute',
+      uid:'glai',
       rating:5,
       location:{
-        address:'1,abc',
+        address:'A-51/60, Model Town',
         state: 'Delhi',
         city: 'New Delhi',
         pin_code: 110001
@@ -21,18 +21,29 @@ export class Search1Component implements OnInit {
       specialities:['Heart','Liver']
     },
     {
-      name:'B Institute',
-      uid:'B2',
+      name:'Oriental Healthcare',
+      uid:'oh1',
       rating:3,
       location:{
-        address:'3,adsv',
-        state: 'Karnataka',
-        city: 'Bangalore',
+        address:'4/20, Virat Market',
+        state: 'Tamil Nadu',
+        city: 'Chennai',
         pin_code: 64665
       },
-      specialities:['Kidney']
+      specialities:['Heart']
+    },
+    {
+      name:'Health 100 Institute',
+      uid:'oh1',
+      rating:3,
+      location:{
+        address:'A3-21, sector 13',
+        state: 'Faridabad',
+        city: 'Uttar Pradesh',
+        pin_code: 897456
+      },
+      specialities:['Lungs']
     }
-
   ];
 
   constructor() { }

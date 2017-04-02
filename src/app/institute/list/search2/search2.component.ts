@@ -33,33 +33,103 @@ export class Search2Component implements OnInit {
 
     doctorsArray: Doctor[]=[
     {
-      id:'dra1',
-      drName: 'H G                      ',
-      fee: 123,
+      id:'hgka',
+      drName: 'Himanshu Gupta',
+      fee: 200,
       speciality:'Kidney',
       department:'Ayurveda',
       location: {
-        address:'1,abc',
+        address:'A-51/60, Model Town',
         state: 'Delhi',
         city: 'New Delhi',
         pin_code: 110001
       },
-      instituteName: "A Institute"
+      instituteName: "Green Leaf Ayurveda Institute"
     },
     {
       id:'drb2',
-      drName: "A V              ",
-      fee: 321,
+      drName: "Astik Verma",
+      fee: 300,
       speciality:"Liver",
       department:"Homeopathy",
-      location: {
-        address:'3,adsv',
-        state: 'Karnataka',
-        city: 'Bangalore',
-        pin_code: 64665
+      location:{
+        address:'A-51/60, Model Town',
+        state: 'Delhi',
+        city: 'New Delhi',
+        pin_code: 110001
       },
-      instituteName: "B Institute"
-    }
+      instituteName: "Green Leaf Ayurveda Institute"
+    },
+      {
+        id:'bk908',
+        drName: "Harshit Aggarwal",
+        fee: 450,
+        speciality:"Heart",
+        department:"Unnani",
+        location: {
+          address:'4/20, Virat Market',
+          state: 'Tamil Nadu',
+          city: 'Chennai',
+          pin_code: 64665
+        },
+        instituteName: "Oriental Healthcare"
+      },
+      {
+        id:'jhb7h',
+        drName: "Gurpreet Singh",
+        fee: 500,
+        speciality:"Heart",
+        department:"Yoga",
+        location: {
+          address:'A3-21, sector 13',
+          state: 'Faridabad',
+          city: 'Haryana',
+          pin_code: 897456
+        },
+        instituteName: "Health 100 Institute"
+      },
+      {
+        id:'jhb7h',
+        drName: "Dilraj Singh",
+        fee: 500,
+        speciality:"Lungs",
+        department:"Yoga",
+        location: {
+          address:'A3-21, sector 13',
+          state: 'Faridabad',
+          city: 'Uttar Pradesh',
+          pin_code: 9627255
+        },
+        instituteName: "Nirogyam Institute for Alternative Medicine"
+      },
+      {
+        id:'jhb7h',
+        drName: "Kripa Shankar",
+        fee: 300,
+        speciality:"Bones",
+        department:"Yoga",
+        location: {
+          address:'B4-21, sector 33',
+          state: 'Ghaziabad',
+          city: 'Uttar Pradesh',
+          pin_code: 948457
+        },
+        instituteName: "Health 100 Institute"
+      },
+      {
+        id:'jhb7h',
+        drName: "Anmol Mangat",
+        fee: 500,
+        speciality:"Skin",
+        department:"Siddha",
+        location: {
+          address:'P-24, New Colony',
+          state: 'Sonipat',
+          city: 'Haryana',
+          pin_code: 2345676
+        },
+        instituteName: "Oriental Healthcare"
+      }
   ];
 
 
