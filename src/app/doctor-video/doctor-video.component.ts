@@ -41,7 +41,6 @@ export class DoctorVideoComponent implements OnInit {
       let conn = this.peer.connect(this.otherId);
       conn.on('open', function () {
        // conn.send(message);
-
       });
     }
     else {

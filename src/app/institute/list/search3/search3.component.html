@@ -1,3 +1,14 @@
-<p>
-  search3 works!
-</p>
+<input type="text" #input (keyup)="0">
+<br>
+<div >
+  <input type="checkbox" name="vehicle" value="0" (click)="onFlip1()" [(ngModel)]="flag1">Ayush<br>
+  <input type="checkbox" name="vehicle" value="1" (click)="onFlip2()" [(ngModel)]="flag2">Yoga<br>
+  <input type="checkbox" name="vehicle" value="2" (click)="onFlip3()" [(ngModel)]="flag3">Unnani<br>
+  <input type="checkbox" name="vehicle" value="3" (click)="onFlip4()" [(ngModel)]="flag4">Siddha<br>
+  <input type="checkbox" name="vehicle" value="4" (click)="onFlip5()" [(ngModel)]="flag5">Homeopathy<br>
+</div>
+<div>
+  <ul>
+    <li *ngFor="let item of dcsArray| dcsName : input.value:flag1:flag2:flag3:flag4:flag5">{{item.drName}} {{item.department}}</li>
+  </ul>
+</div>

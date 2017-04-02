@@ -7,13 +7,18 @@ import {Dcs} from "./dcs";
   styleUrls: ['./search3.component.css']
 })
 export class Search3Component implements OnInit {
-
+  flag1=false;
+  flag2=false;
+  flag3=false;
+  flag4=false;
+  flag5=false;
   dcsArray:Dcs[]=[
-    { institutionName:'A Institute',
+    { name:'Abc',
+      institutionName:'A Institute',
       rating: 5,
       type:'C',
       id:'a01',
-      department:[1],
+      department:['Yoga'],
       location:{
         address:'1,abc',
         state: 'Delhi',
@@ -21,11 +26,12 @@ export class Search3Component implements OnInit {
         pin_code: 110001
       }
     },
-    { institutionName:'B Institute',
+    { name:'xyz',
+      institutionName:'B Institute',
       rating: 3,
       type:'D',
       id:'a01',
-      department:[1],
+      department:['Ayush'],
       location:{
         address:'2,cslkds',
         state: 'Delhi',
@@ -37,6 +43,21 @@ export class Search3Component implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+  onFlip1(){
+
+  }
+  onFlip2(){
+
+  }
+  onFlip3(){
+
+  }
+  onFlip4(){
+
+  }
+  onFlip5(){
+
   }
 
 }

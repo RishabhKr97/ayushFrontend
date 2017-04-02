@@ -15,6 +15,12 @@ import {Search1Component} from "./institute/list/search1/search1.component";
 import {Search2Component} from "./institute/list/search2/search2.component";
 import {Search3Component} from "./institute/list/search3/search3.component";
 import {DocNamePipe} from "./institute/list/search2/doc-name.pipe";
+import { MessageComponent } from './message/message.component';
+import {MessageService} from "./message.service";
+import { DcsNamePipe } from './institute/list/search3/dcs-name.pipe';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import {routing} from "./app.routing";
 
 
 @NgModule({
@@ -25,16 +31,17 @@ import {DocNamePipe} from "./institute/list/search2/doc-name.pipe";
     Search1Component,
     Search2Component,
     Search3Component,
-    FormInstituteComponent, DoctorVideoComponent, PatientVideoComponent,InstiNamePipe,DocNamePipe
+    FormInstituteComponent, DoctorVideoComponent, PatientVideoComponent,InstiNamePipe,DocNamePipe, MessageComponent, DcsNamePipe, LoginComponent, RegisterComponent
 
 ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    routing
   ],
-  providers: [AddformService,VideoCallService],
+  providers: [AddformService,VideoCallService,MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
