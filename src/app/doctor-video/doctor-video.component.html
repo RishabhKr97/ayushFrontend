@@ -1,10 +1,14 @@
-<div *ngIf="!keysent">
-<button (click)="onStarChat()">Start Chat</button>
+<div *ngIf="!keysent" style="align-content: center; margin: 50px">
+<button class="btn btn-primary" (click)="onStarChat()">Start Chat</button>
 </div>
 <div *ngIf="keysent">
-  <h1>My Key - {{myId}}</h1>
-  <input type="text" [(ngModel)]="otherId">
+  <h1>Ready</h1>
+  <input type="text" [(ngModel)]="otherId" hidden>
   <button (click)="onConnect()">Connect</button>
-  <button (click)="onVideo()">VideoChat</button>
 </div>
-<video #myVideo></video>
+<div align="center">
+  <object class="embed-responsive-item">
+    <video #myVideo style=" border:4px dashed rosybrown; "></video>
+  </object>
+</div>
+
