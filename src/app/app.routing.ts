@@ -9,17 +9,20 @@ import {UserUpcomingComponent} from "./user-upcoming/user-upcoming.component";
 import {UserHistoryComponent} from "./user-history/user-history.component";
 import {UserProfileComponent} from "./user-profile/user-profile.component";
 import {UserReportsComponent} from "./user-reports/user-reports.component";
+import {SEARCH_ROUTES} from "./user-home/user.routes";
 const APP_ROUTES: Routes = [
- // {path: '', component: LoginComponent},
-  {path: 'register',component:RegisterComponent},
-  {path: 'register',component:RegisterComponent,children:REGISTER_ROUTES},
-  {path:'institution/video',component:DoctorVideoComponent},
-  {path:'patient/:id/video',component:PatientVideoComponent},
-  {path:'patient/:id/home',component:UserHomeComponent},
-  {path:'patient/:id/upcoming',component:UserUpcomingComponent},
-  {path:'patient/:id/history',component:UserHistoryComponent},
-  {path:'patient/:id/profile',component:UserProfileComponent},
-  {path:'patient/:id/reports',component:UserReportsComponent},
+  {path: '', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: 'register', component: RegisterComponent, children: REGISTER_ROUTES},
+  {path: 'institution/video', component: DoctorVideoComponent},
+  {path: 'patient/:id/video', component: PatientVideoComponent},
+  {path: 'patient/:id/home', component: UserHomeComponent},
+  {path: 'patient/:id/home', component: UserHomeComponent,children:SEARCH_ROUTES},
+  {path: 'patient/:id/upcoming', component: UserUpcomingComponent},
+  {path: 'patient/:id/history', component: UserHistoryComponent},
+  {path: 'patient/:id/profile', component: UserProfileComponent},
+  {path: 'patient/:id/reports', component: UserReportsComponent},
+
 
 ];
-export const routing=RouterModule.forRoot(APP_ROUTES);
+export const routing = RouterModule.forRoot(APP_ROUTES);
