@@ -1,5 +1,23 @@
 <div class="container">
-  <h2 style="text-align: center;">Your Past Appointments</h2>
+  <h2 style="text-align: center;">Your Upcoming Appointments</h2>
+  <div class="well" *ngIf="show===true">
+	  <table class="table table-bordered">
+    	<thead>
+    		<tr>
+					<th>Doctor Name</th>
+					<th>Department</th>
+					<th>Speciality</th>
+    		</tr>
+    	</thead>
+	    <tbody>
+      	<tr>
+	        <td>{{appt_data.doctor_name}}</td>
+	        <td>{{appt_data.department}}</td>
+	        <td>{{appt_data.speciality_name}}</td>
+        </tr>
+		  </tbody>
+		</table>
+  </div>
   <div *ngIf="appt">
 	  <table class="table table-hover">
     	<thead>
@@ -8,16 +26,18 @@
 					<th>Mode</th>
 					<th>Begin Time</th>
 					<th>End Time</th>
+					<th></th>
     		</tr>
     	</thead>
 	    <tbody>
 	    		<ng-container *ngFor="let item of appt;" >
-		      	<tr *ngIf="(item.status === 1)">
+		      	<tr *ngIf="(item.status === 1)" (click)="row_click(item.id)">
 			        <td>{{item.date}}</td>
 			        <td *ngIf="item.mode===true">Online</td>
 			        <td *ngIf="item.mode===false">Offline</td>
 			        <td>{{item.BeginTime | date:'h:mma'}}</td>
 			        <td>{{item.EndTime | date:'h:mma'}}</td>
+			        <td><button class="btn btn-sm btn-primary">Start Consultation</button></td>
 		        </tr>
 		      </ng-container>
 		  </tbody>

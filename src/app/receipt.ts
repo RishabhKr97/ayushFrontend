@@ -10,8 +10,8 @@ export class Receipt {
               public name:string,
               public rate:number,
               public BeginTime:Date,
-              public EndTime:Date
-
+              public EndTime:Date,
+              public prescription:string
 
 
   ){

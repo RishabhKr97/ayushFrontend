@@ -4,7 +4,7 @@ import'rxjs/Rx';
 
 @Injectable()
 export class AppointmentService {
-  id_appointment='http://10.1.7.28:3000/patients/1/appointments';
+  id_appointment='http://192.168.137.48:3000/patients/1/appointments';
   constructor(private http: Http) {
 
   }
