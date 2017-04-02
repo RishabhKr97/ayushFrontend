@@ -1,7 +1,7 @@
 <div>
   <ul class="nav nav-tabs">
-    <li role="presentation" [ngClass]="{active: flag}" (click)="onRouteClick()"><a [routerLink]="['patient']">Patient</a></li>
-    <li role="presentation" [ngClass]="{active: !flag}" (click)="onRouteClick()"><a [routerLink]="['institution']"  >Institution</a></li>
+    <li role="presentation" routerLinkActive="active"><a [routerLink]="['patient']">Patient</a></li>
+    <li role="presentation" routerLinkActive="active"><a [routerLink]="['institution']"  >Institution</a></li>
   </ul>
 </div>
 <div class="container">
