@@ -3,15 +3,15 @@
     <input type="text" [(ngModel)]="searchDrName" placeholder="enter Doctor's name here!" >
   </div>
   <div class="col-lg-8">
-    <button (click)="f(0)">Ayurveda  </button>
-    <button (click)="f(1)">Yoga      </button>
-    <button (click)="f(2)">Unnani    </button>
-    <button (click)="f(3)">Siddhi    </button>
-    <button (click)="f(4)">Homeopathy</button>
+    <input type="checkbox" value="0" (click)="f0()" [(ngModel)]="flag0">Ayurveda  <br>
+    <input type="checkbox" value="1" (click)="f1()" [(ngModel)]="flag1">Yoga      <br>
+    <input type="checkbox" value="2" (click)="f2()" [(ngModel)]="flag2">Unnani    <br>
+    <input type="checkbox" value="3" (click)="f3()" [(ngModel)]="flag3">Siddha    <br>
+    <input type="checkbox" value="4" (click)="f4()" [(ngModel)]="flag4">Homeopathy<br>
   </div>
 </div>
 
-<div class="row" *ngFor="let i of doctorsArray | docName: searchDrName:DFlags ;">
+<div class="row" *ngFor="let i of doctorsArray | docName: searchDrName:flag0:flag1:flag2:flag3:flag4;">
   <div class="col-lg-3"><p>DrName: {{i.drName}}</p></div>
   <div class="col-lg-3"><p>DrInstitute: {{i.instituteName}} </p></div>
   <div class="col-lg-3">DrLocation<br>

@@ -1,14 +1,32 @@
-<input type="text" #input (keyup)="0">
-<br>
-<div >
-  <input type="checkbox" name="vehicle" value="0" (click)="onFlip1()" [(ngModel)]="flag1">Ayush<br>
-  <input type="checkbox" name="vehicle" value="1" (click)="onFlip2()" [(ngModel)]="flag2">Yoga<br>
-  <input type="checkbox" name="vehicle" value="2" (click)="onFlip3()" [(ngModel)]="flag3">Unnani<br>
-  <input type="checkbox" name="vehicle" value="3" (click)="onFlip4()" [(ngModel)]="flag4">Siddha<br>
-  <input type="checkbox" name="vehicle" value="4" (click)="onFlip5()" [(ngModel)]="flag5">Homeopathy<br>
+<div class="row">
+  <div class="'col-lg-4">
+    <input type="text" [(ngModel)]="searchDCS" placeholder="enter service(D.C.S)'s name here!" >
+  </div>
+  <div class="col-lg-8">
+    <input type="checkbox" value="0" (click)="f0()" [(ngModel)]="flag0">Ayurveda  <br>
+    <input type="checkbox" value="1" (click)="f1()" [(ngModel)]="flag1">Yoga      <br>
+    <input type="checkbox" value="2" (click)="f2()" [(ngModel)]="flag2">Unnani    <br>
+    <input type="checkbox" value="3" (click)="f3()" [(ngModel)]="flag3">Siddha    <br>
+    <input type="checkbox" value="4" (click)="f4()" [(ngModel)]="flag4">Homeopathy<br>
+  </div>
 </div>
-<div>
-  <ul>
-    <li *ngFor="let item of dcsArray| dcsName : input.value:flag1:flag2:flag3:flag4:flag5">{{item.drName}} {{item.department}}</li>
-  </ul>
+
+<div class="row" *ngFor="let i of dcsArray | dcsName:searchDCS:flag0:flag1:flag2:flag3:flag4;">
+  <div class="col-lg-1"><p>Service Name: {{i.name}}</p></div>
+  <div class="col-lg-2"><p>Institute: {{i.institutionName}} </p></div>
+  <div class="col-lg-3"><p>Location<br></p>
+    <ul>
+      <li>{{i.location.address}}</li>
+      <li>{{i.location.city}}</li>
+      <li>{{i.location.state}}</li>
+      <li>{{i.location.pin_code}}</li>
+    </ul>
+  </div>
+  <div class="col-lg-1"><p>Type:{{i.type}}</p></div>
+  <div class="col-lg-1"><p>rating: {{i.rating}}</p></div>
+  <div class="col-lg-2">
+    <ul>
+      <li *ngFor="let n of i.department">{{n}}</li>
+    </ul>
+  </div>
 </div>
