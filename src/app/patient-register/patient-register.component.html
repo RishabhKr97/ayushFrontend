@@ -1,0 +1,40 @@
+<div class="container">
+  <div [hidden]="submitted">
+    <h2>Patient Register</h2>
+
+    <div *ngIf="patientR">
+      <form *ngIf="active" (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm" >
+      <div class="form-group">
+        <label for="first_name">First Name</label>
+        <input type="text" class="form-control" id="first_name" placeholder="Enter your first name" required
+               [(ngModel)]="patientR.first_name" name="first_name" >
+      </div>
+
+      <div class="form-group">
+        <label for="last_name">Last Name</label>
+        <input type="text" class="form-control" id="last_name" placeholder="Enter your last name" required
+               [(ngModel)]="patientR.last_name" name="last_name" >
+      </div>
+
+      <div class="form-group">
+        <label for="mobile">Mobile</label>
+        <input type="text" class="form-control" id="mobile" placeholder="Enter your mobile number" required
+               [(ngModel)]="patientR.mobile" name="mobile" >
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" name="password" id="password" [(ngModel)]="patientR.password" #password="ngModel" required />
+      </div>
+      <div class="form-group">
+        <label for="password_confirmation">Re-Enter Password</label>
+        <input type="password" class="form-control" name="confirmation_password" id="password_confirmation" [(ngModel)]="patientR.password_confirmation" #password_confirmation="ngModel" required />
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-primary" value="Register">Register</button>
+
+      </div>
+    </form></div>
+  </div>
+</div>
