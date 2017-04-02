@@ -22,7 +22,7 @@
 </div>
 
 <div *ngFor="let i of dcsArray | dcsName:searchDCS:flag0:flag1:flag2:flag3:flag4;">
-<div class="row" style="text-align: center">
+  <div class="well well-md">
   <div class="row" style="margin: 20px;">
     <div class="col-md-3"><span style="font-weight: bold">Service Name: </span>{{i.name}}</div>
     <div class="col-md-3"><span style="font-weight: bold">Institute: </span>{{i.institutionName}}</div>
@@ -32,7 +32,6 @@
     <div class="col-md-3"><span style="font-weight: bold">Rating: </span>{{i.rating}}</div>
   </div>
   <hr>
-</div>
 <div class="row">
   <div class="col-md-3 col-md-offset-2"><span style="font-weight: bold;">Institute Location</span><br>
     <span style="font-weight: bold">Address: </span>{{i.location.address}}<br>
@@ -40,7 +39,7 @@
     <span style="font-weight: bold">State: </span>{{i.location.state}}<br>
     <span style="font-weight: bold">Pin: </span>{{i.location.pin_code}}<br>
   </div>
-  <div class="col-md-3 col-md-offset-2"><span style="font-weight: bold">Type: </span>{{i.type}}</div>
 </div>
+  </div>
   <hr><hr><hr>
 </div>

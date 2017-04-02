@@ -31,8 +31,6 @@ export class Search3Component implements OnInit {
   f4():void{
     this.flag4=!this.flag4;
   }
-
-
   dcsArray:Dcs[]=[
     { name:'Blood test',
       institutionName:'Green Leaf Ayurveda Institute',
