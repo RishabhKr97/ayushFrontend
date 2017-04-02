@@ -10,7 +10,11 @@ export class ReceiptService {
 
   }
 
-  getReceipt(id)
+  getReceipt()
+  {
+    return this.http.get(this.id_receipt).map((response:Response)=> response.json());
+  }
+  getReceiptWithId(id)
   {
     return this.http.get(this.id_receipt+id+'/receipt').map((response:Response)=> response.json());
   }

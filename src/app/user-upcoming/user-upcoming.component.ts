@@ -31,7 +31,7 @@ console.log(this.appt);
   }
 
   row_click(id) {
-  	this.receipt_service.getReceipt(id).subscribe((data)=>{
+  	this.receipt_service.getReceiptWithId(id).subscribe((data)=>{
   		this.show = true;
       this.appt_data = new Receipt(data.id,data.first_name,data.last_name,data.mobile,data.email,data.doctor_name,data.department,data.speciality_name, data.name,data.rate,data.BeginTime,data.EndTime,data.prescription);
       console.log(this.appt_data);
