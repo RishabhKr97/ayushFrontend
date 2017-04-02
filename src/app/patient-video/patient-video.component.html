@@ -2,9 +2,12 @@
   <button (click)="onPatientCall()">Check Doctor Video</button>
 </div>
 <div *ngIf="gotkey">
-  <h1>My Key - {{myId}}</h1>
-  <input type="text" [(ngModel)]="otherId">
-  <button (click)="onConnect()">Connect</button>
-  <button (click)="onVideo()">VideoChat</button>
+
+  <input type="text" [(ngModel)]="otherId" hidden>
+
 </div>
-<video #myVideo></video>
+<div align="center">
+  <object class="embed-responsive-item">
+    <video #myVideo style=" border:4px dashed rosybrown; "></video>
+  </object>
+</div>

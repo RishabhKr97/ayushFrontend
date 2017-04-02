@@ -3,7 +3,7 @@ import {Http, Response} from "@angular/http";
 
 @Injectable()
 export class LoginService {
-  url='http://10.1.9.112:3000/patients/';
+  url='http://192.168.137.12:3000/patients/';
   url2='/login';
   constructor(private http:Http) { }
   sendLoginDetails(id:string,pass:string){

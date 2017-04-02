@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="masthead">
+    <h3 class="text-muted">Project-Institution</h3>
+    <nav>
+      <ul class="nav nav-justified">
+        <li routerLinkActive="active"><a [routerLink]="['institute','1','upcoming']" >Upcoming Appointments</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['institute','1','history']" >Appointment History</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['institute','1','add_service']" >Add Service</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['institute','1','profile']" >Profile</a></li>
+        <li><a >Log Out</a></li>
+      </ul>
+    </nav>
+  </div>
+  <router-outlet></router-outlet>
+</div>

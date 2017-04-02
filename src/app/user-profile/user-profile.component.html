@@ -8,7 +8,7 @@
                [(ngModel)]="contact.first_name" name="first_name" id =first_name>
 
 
-        </div>
+      </div>
       <div class="form-group">
         <label for="last_name">Last Name</label>
         <input type="text" class="form-control" placeholder="Enter Your Last Name"
@@ -16,16 +16,16 @@
       </div>
 
       <!--<image-upload-->
-        <!--[max]="1"-->
-        <!--[url]="'example.com/images/upload'"-->
-        <!--[headers]="[-->
-    <!--{header: 'Authorization', value: 'MyToken'}-->
-  <!--]"-->
-        <!--[buttonCaption]="'Select Images!'"-->
-        <!--[dropBoxMessage]="'Drop your images here!'"-->
-        <!--(onFileUploadFinish)="imageUploaded($event)"-->
-        <!--(onRemove)="imageRemoved($event)"-->
-        <!--(isPending)="disableSendButton($event)"-->
+      <!--[max]="1"-->
+      <!--[url]="'example.com/images/upload'"-->
+      <!--[headers]="[-->
+      <!--{header: 'Authorization', value: 'MyToken'}-->
+      <!--]"-->
+      <!--[buttonCaption]="'Select Images!'"-->
+      <!--[dropBoxMessage]="'Drop your images here!'"-->
+      <!--(onFileUploadFinish)="imageUploaded($event)"-->
+      <!--(onRemove)="imageRemoved($event)"-->
+      <!--(isPending)="disableSendButton($event)"-->
       <!--&gt;</image-upload>-->
       <div class="form-group">
         <label for="mobile">Mobile</label>
@@ -81,22 +81,23 @@
                  [(ngModel)]="contact.email" name="email" id="email">
         </div>
 
-      <div class="form-group">
-        <label for="aadhar">Aadhar</label>
-        <input type="text" class="form-control" placeholder="Enter Your Aadhar"
-               [(ngModel)]="contact.aadhar" name="aadhar" id="aadhar"
+        <div class="form-group">
+          <label for="aadhar">Aadhar</label>
+          <input type="text" class="form-control" placeholder="Enter Your Aadhar"
+                 [(ngModel)]="contact.aadhar" name="aadhar" id="aadhar"
 
-        >
+          >
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!contactForm.form.valid">Submit</button>
+      </div>
+      <div [hidden]="!submitted">
+
+
       </div>
 
-      <button type="submit" class="btn btn-primary" [disabled]="!contactForm.form.valid">Submit</button>
-  </div>
-  <div [hidden]="!submitted">
 
-
-    </div>
-
-
-</form>
+    </form>
   </div>
 </div>
+
