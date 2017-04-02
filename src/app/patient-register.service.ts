@@ -3,7 +3,7 @@ import {Response, Http} from "@angular/http";
 
 @Injectable()
 export class PatientRegisterService {
-  id_register='http://10.1.9.112:3000/patients';
+  id_register='http://192.168.137.12:3000/patients';
   constructor(private http: Http) { }
 
   postForm(form:any)
@@ -11,9 +11,6 @@ export class PatientRegisterService {
     return this.http.post(this.id_register,form).map((response:Response)=> response.json());
   }
 
-  getstatus()
-  {
-    return this.http.get(this.id_register).map((response:Response)=> response.json());
-  }
+
 }
 

@@ -37,6 +37,12 @@ import {InstituteRegisterService} from "./institute-register.service";
 import {InstituteHistoryComponent} from "app/institute-history/institute-history.component";
 import {InstituteRegisterComponent} from "./institute-register/institute-register.component";
 import {LoginService} from "./login/login.service";
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { UserHomeComponent } from './user-home/user-home.component';
+import { UserUpcomingComponent } from './user-upcoming/user-upcoming.component';
+import { UserHistoryComponent } from './user-history/user-history.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserReportsComponent } from './user-reports/user-reports.component';
 
 
 @NgModule({
@@ -56,7 +62,13 @@ import {LoginService} from "./login/login.service";
     ReceiptComponent,
     LogintComponent,
     InstituteHistoryComponent,
-    InstituteRegisterComponent
+    InstituteRegisterComponent,
+    UserDashboardComponent,
+    UserHomeComponent,
+    UserUpcomingComponent,
+    UserHistoryComponent,
+    UserProfileComponent,
+    UserReportsComponent
 
   ],
   imports: [
