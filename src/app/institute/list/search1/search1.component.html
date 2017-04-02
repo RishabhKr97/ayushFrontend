@@ -1,19 +1,19 @@
-<div class="row">
-  <div class="'col-lg-4">
+<div class="row"  >
+  <div class="'col-md-4">
     <input type="text" [(ngModel)]="searchName" placeholder="enter Institute name here!" >
   </div>
 </div>
 
 <div class="row" *ngFor="let i of institutesArray | instiName: searchName;">
-  <div class="col-lg-3"><p>InstituteName: {{i?.name}}</p></div>
+  <div class="col-md-3"><p>InstituteName: {{i?.name}}</p></div>
 
-  <div class="col-lg-3">InstituteSpecialitites<br>
+  <div class="col-md-3">InstituteSpecialitites<br>
     <ul>
       <li *ngFor="let s of i.specialities">{{s}}</li>
     </ul>
   </div>
 
-  <div class="col-lg-3">InstituteLocation<br>
+  <div class="col-md-3">InstituteLocation<br>
     <ul>
       <li>{{i.location.address}}</li>
       <li>{{i.location.city}}</li>
@@ -23,6 +23,6 @@
     </ul>
   </div>
 
-  <div class="col-lg-3"><p>InstituteRating:{{i?.rating}}</p></div>
+  <div class="col-md-3"><p>InstituteRating:{{i?.rating}}</p></div>
 
 </div>

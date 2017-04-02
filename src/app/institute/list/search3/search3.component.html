@@ -1,8 +1,8 @@
-<div class="row">
+<div class="row" style="display: flex">
   <div class="'col-lg-4">
     <input type="text" [(ngModel)]="searchDCS" placeholder="enter service(D.C.S)'s name here!" >
   </div>
-  <div class="col-lg-8">
+  <div class="col-lg-8" style="display: flex">
     <input type="checkbox" value="0" (click)="f0()" [(ngModel)]="flag0">Ayurveda  <br>
     <input type="checkbox" value="1" (click)="f1()" [(ngModel)]="flag1">Yoga      <br>
     <input type="checkbox" value="2" (click)="f2()" [(ngModel)]="flag2">Unnani    <br>
@@ -11,7 +11,7 @@
   </div>
 </div>
 
-<div class="row" *ngFor="let i of dcsArray | dcsName:searchDCS:flag0:flag1:flag2:flag3:flag4;">
+<div class="row" style="display: flex" *ngFor="let i of dcsArray | dcsName:searchDCS:flag0:flag1:flag2:flag3:flag4;">
   <div class="col-lg-1"><p>Service Name: {{i.name}}</p></div>
   <div class="col-lg-2"><p>Institute: {{i.institutionName}} </p></div>
   <div class="col-lg-3"><p>Location<br></p>
