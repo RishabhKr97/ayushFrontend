@@ -43,6 +43,10 @@ import { UserUpcomingComponent } from './user-upcoming/user-upcoming.component';
 import { UserHistoryComponent } from './user-history/user-history.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserReportsComponent } from './user-reports/user-reports.component';
+import { InstituteDashboardComponent } from './institute-dashboard/institute-dashboard.component';
+import { InstiHistoryComponent } from './insti-history/insti-history.component';
+import { InstiProfileComponent } from './insti-profile/insti-profile.component';
+import { InstiUpcomingComponent } from './insti-upcoming/insti-upcoming.component';
 
 
 @NgModule({
@@ -68,7 +72,11 @@ import { UserReportsComponent } from './user-reports/user-reports.component';
     UserUpcomingComponent,
     UserHistoryComponent,
     UserProfileComponent,
-    UserReportsComponent
+    UserReportsComponent,
+    InstituteDashboardComponent,
+    InstiHistoryComponent,
+    InstiProfileComponent,
+    InstiUpcomingComponent
 
   ],
   imports: [
