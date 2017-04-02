@@ -3,7 +3,7 @@ import {Http, Response} from "@angular/http";
 import 'rxjs/Rx';
 @Injectable()
 export class VideoCallService {
-  url='http://10.1.9.112:3000/videos/1';
+  url='http://192.168.137.12:3000/videos/1';
   constructor(private _http:Http) { }
   sendDoctorKey(key:string){
     const keyObject={room_key:key};

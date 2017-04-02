@@ -34,32 +34,59 @@ export class Search3Component implements OnInit {
 
 
   dcsArray:Dcs[]=[
-    { name:'X-ray',
-      institutionName:'A Institute',
+    { name:'Blood test',
+      institutionName:'Green Leaf Ayurveda Institute',
       rating: 5,
-      type:'C',
+      type:'D',
       id:'a01',
       department:['Ayurveda','Yoga'],
       location:{
-        address:'1,abc',
+        address:'A-51/60, Model Town',
         state: 'Delhi',
         city: 'New Delhi',
         pin_code: 110001
       }
     },
-    { name: 'Blood Test',
-      institutionName:'B Institute',
+    { name:'Cholestrol Test',
+      institutionName:'Green Leaf Ayurveda Institute',
+      rating: 5,
+      type:'D',
+      id:'a01',
+      department:['Ayurveda','Yoga'],
+      location:{
+        address:'A-51/60, Model Town',
+        state: 'Delhi',
+        city: 'New Delhi',
+        pin_code: 110001
+      }
+    },
+    { name: 'X-Ray test',
+      institutionName:'Oriental Healthcare',
       rating: 3,
       type:'D',
       id:'a01',
       department:['Homeopathy'],
       location:{
-        address:'2,asdv',
-        state: 'Delhi',
-        city: 'New Delhi',
-        pin_code: 110001
+        address:'4/20, Virat Market',
+        state: 'Tamil Nadu',
+        city: 'Chennai',
+        pin_code: 64665
+      }
+    },
+    { name: 'Eye test',
+      institutionName:'Health 100 Institute',
+      rating: 3,
+      type:'C',
+      id:'a21',
+      department:['Homeopathy'],
+      location:{
+        address:'A3-21, sector 13',
+        state: 'Faridabad',
+        city: 'Uttar Pradesh',
+        pin_code: 897456
       }
     }
+
 ];
   constructor() { }
   ngOnInit() {
