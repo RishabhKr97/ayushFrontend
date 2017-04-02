@@ -15,18 +15,18 @@
                [(ngModel)]="contact.last_name" name="last_name">
       </div>
 
-      <image-upload
-        [max]="1"
-        [url]="'example.com/images/upload'"
-        [headers]="[
-    {header: 'Authorization', value: 'MyToken'}
-  ]"
-        [buttonCaption]="'Select Images!'"
-        [dropBoxMessage]="'Drop your images here!'"
-        (onFileUploadFinish)="imageUploaded($event)"
-        (onRemove)="imageRemoved($event)"
-        (isPending)="disableSendButton($event)"
-      ></image-upload>
+      <!--<image-upload-->
+        <!--[max]="1"-->
+        <!--[url]="'example.com/images/upload'"-->
+        <!--[headers]="[-->
+    <!--{header: 'Authorization', value: 'MyToken'}-->
+  <!--]"-->
+        <!--[buttonCaption]="'Select Images!'"-->
+        <!--[dropBoxMessage]="'Drop your images here!'"-->
+        <!--(onFileUploadFinish)="imageUploaded($event)"-->
+        <!--(onRemove)="imageRemoved($event)"-->
+        <!--(isPending)="disableSendButton($event)"-->
+      <!--&gt;</image-upload>-->
       <div class="form-group">
         <label for="mobile">Mobile</label>
         <input type="number" class="form-control" placeholder="Enter Your Phone Number"
@@ -97,3 +97,6 @@
     </div>
 
 
+</form>
+  </div>
+</div>

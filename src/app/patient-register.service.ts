@@ -3,7 +3,7 @@ import {Response, Http} from "@angular/http";
 
 @Injectable()
 export class PatientRegisterService {
-  id_register='http://10.1.7.28:3000/patients';
+  id_register='http://10.1.9.112:3000/patients';
   constructor(private http: Http) { }
 
   postForm(form:any)

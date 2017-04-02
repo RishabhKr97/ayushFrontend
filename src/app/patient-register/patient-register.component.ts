@@ -22,7 +22,7 @@ export class PatientRegisterComponent implements OnInit {
     console.log(registerForm);
 
     this.patientReg_service.postForm(registerForm.value).subscribe((data)=>{
-      if (data.status===200){
+      if (data.status==='Success'){
         alert("Success");
       }
       else{

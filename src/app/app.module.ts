@@ -32,6 +32,11 @@ import {AppointmentComponent} from "./appointment/appointment.component";
 import {PatientRegisterComponent} from "./patient-register/patient-register.component";
 import {ReceiptComponent} from "./receipt/receipt.component";
 import { LogintComponent } from './logint/login.component';
+import {InstituteHistoryService} from "./institute-history.service";
+import {InstituteRegisterService} from "./institute-register.service";
+import {InstituteHistoryComponent} from "app/institute-history/institute-history.component";
+import {InstituteRegisterComponent} from "./institute-register/institute-register.component";
+import {LoginService} from "./login/login.service";
 
 
 @NgModule({
@@ -50,6 +55,8 @@ import { LogintComponent } from './logint/login.component';
     PatientRegisterComponent,
     ReceiptComponent,
     LogintComponent,
+    InstituteHistoryComponent,
+    InstituteRegisterComponent
 
   ],
   imports: [
@@ -59,7 +66,7 @@ import { LogintComponent } from './logint/login.component';
     ReactiveFormsModule,
     routing
   ],
-  providers: [AddformService, VideoCallService, MessageService, PatientService, AppointmentService, ReceiptService, PatientRegisterService],
+  providers: [AddformService, VideoCallService, MessageService, PatientService, AppointmentService, ReceiptService, PatientRegisterService,InstituteHistoryService,InstituteRegisterService,LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
