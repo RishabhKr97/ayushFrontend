@@ -1,0 +1,14 @@
+<div>
+  <ul class="nav nav-tabs">
+    <li role="presentation" routerLinkActive="active"><a [routerLink]="['patient']">Patient</a></li>
+    <li role="presentation" routerLinkActive="active"><a [routerLink]="['institution']"  >Institution</a></li>
+  </ul>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 col-lg-offset-3">
+      <router-outlet></router-outlet>
+      <hr>
+    </div>
+  </div>
+</div>

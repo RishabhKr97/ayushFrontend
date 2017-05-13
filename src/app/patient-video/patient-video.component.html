@@ -1,0 +1,17 @@
+<div *ngIf="!gotkey">
+  <button class="btn btn-primary" (click)="onPatientCall()">Check Doctor Video</button>
+</div>
+<div *ngIf="gotkey">
+
+  <input type="text" [(ngModel)]="otherId" hidden>
+
+</div>
+<div class="container">
+  <div class="row">
+    <div align="center" class="col-md-6 col-md-offset-3">
+      <object class="embed-responsive-item">
+        <video #myVideo style=" border:4px dashed rosybrown; "></video>
+      </object>
+    </div>
+  </div>
+</div>

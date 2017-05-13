@@ -1,0 +1,46 @@
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-5">
+    <input type="text" [(ngModel)]="searchDrName" placeholder="Enter Doctor's name here!" style="margin: 20px">
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-2 col-md-offset-1" >
+    <input type="checkbox" value="0" (click)="f0()" [(ngModel)]="flag0"><span style="font-weight: bold; text-decoration: underline;"> Ayurveda</span>
+  </div>
+  <div class="col-md-2">
+    <input type="checkbox" value="1" (click)="f1()" [(ngModel)]="flag1"><span style="font-weight: bold; text-decoration: underline;"> Yoga</span>
+  </div>
+  <div class="col-md-2">
+    <input type="checkbox" value="2" (click)="f2()" [(ngModel)]="flag2"><span style="font-weight: bold; text-decoration: underline;"> Unnani</span>
+  </div>
+  <div class="col-md-2">
+    <input type="checkbox" value="3" (click)="f3()" [(ngModel)]="flag3"><span style="font-weight: bold; text-decoration: underline;"> Siddha</span>
+  </div>
+  <div class="col-md-2">
+    <input type="checkbox" value="4" (click)="f4()" [(ngModel)]="flag4"><span style="font-weight: bold; text-decoration: underline;"> Homeopathy</span>
+  </div>
+</div>
+
+<div *ngFor="let i of doctorsArray | docName: searchDrName:flag0:flag1:flag2:flag3:flag4;" style="text-align: center">
+  <div class="well well-md">
+    <div class="row" style="margin: 20px;">
+      <div class="col-md-3"><span style="font-weight: bold">Dr. Name: </span>{{i.drName}}</div>
+      <div class="col-md-3"><span style="font-weight: bold">Specializes in: </span>{{i.speciality}}</div>
+      <div class="col-md-3"><span style="font-weight: bold">Department: </span>{{i.department}}</div>
+      <div class="col-md-2"><span style="font-weight: bold">Institute: </span>{{i.instituteName}}</div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-3 col-md-offset-2"><span style="font-weight: bold;">Institute Location</span><br>
+        <span style="font-weight: bold">Address: </span>{{i.location.address}}<br>
+        <span style="font-weight: bold">City: </span>{{i.location.city}}<br>
+        <span style="font-weight: bold">State: </span>{{i.location.state}}<br>
+        <span style="font-weight: bold">Pin: </span>{{i.location.pin_code}}<br>
+      </div>
+      <div class="col-md-2"><span style="font-weight: bold;">Consultation Charges:<br></span>{{i.fee}}</div>
+      <div class="col-md-2"><button class="btn btn-info" ><a [routerLink]="['/booked']">Book Now</a></button></div>
+    </div>
+    <hr>
+  </div>
+</div>

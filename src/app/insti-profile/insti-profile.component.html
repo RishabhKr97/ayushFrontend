@@ -1,0 +1,71 @@
+<form [formGroup]="institutionForm">
+
+  <div class="form-group">
+    <label for="instituteName">Institute Name:</label>
+
+    <input type="text"
+           class="form-control"
+           id="instituteName"
+           formControlName="name"
+    >
+  </div>
+
+  <div class="form-group">
+    <label for="instituteEmail">E-Mail</label>
+
+    <input type="email"
+           class="form-control"
+           id="instituteEmail"
+           formControlName="email">
+  </div>
+
+
+  <!--<div class="form-group">-->
+  <!--<label for="institutePassword">Password</label>-->
+
+  <!--<input type="text"-->
+  <!--class="form-control"-->
+  <!--id="institutePassword"-->
+  <!--formControlName="password">-->
+  <!--</div>-->
+
+  <div class="form-group">
+    <label for="institutePhone">Phone</label>
+
+    <input type="text"
+           class="form-control"
+           id="institutePhone"
+           formControlName="contact_number">
+  </div>
+
+
+  <div class="form-group">
+    <label for="instituteAddress">About</label>
+
+    <input type="text"
+           class="form-control"
+           id="instituteAddress"
+           formControlName="about">
+  </div>
+
+  <div class="form-group">
+    <label for="instituteWebsite">Photo</label>
+
+    <input type="text"
+           class="form-control"
+           id="instituteWebsite"
+           formControlName="website">
+  </div>
+  <div class="form-group">
+    <label for="institutePhoto">Website</label>
+
+    <input type="text"
+           class="form-control"
+           id="institutePhoto"
+           formControlName="photo">
+  </div>
+
+
+  <br>
+  <button type="submit" class="btn btn-primary" (click)="formSubmit()">Submit</button>
+</form>

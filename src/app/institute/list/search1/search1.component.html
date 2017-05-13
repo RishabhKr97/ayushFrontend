@@ -1,0 +1,24 @@
+<div class="row"  >
+  <div class="col-md-4 col-md-offset-5">
+    <input type="text" [(ngModel)]="searchName" placeholder="Enter Institute name here!" style="margin: 20px" >
+  </div>
+</div>
+
+<div class="row" *ngFor="let i of institutesArray | instiName: searchName;" style="text-align: center; margin: 50px">
+  <div class="col-md-3"><p><span style="font-weight: bold; text-decoration: underline;">Institute Name:</span><br> {{i?.name}}</p></div>
+
+  <div class="col-md-2"><span style="font-weight: bold;  text-decoration: underline;">Institute Specialitites</span><br>
+    <span *ngFor="let s of i.specialities">{{s}} <br> </span>
+  </div>
+
+  <div class="col-md-3"><span style="font-weight: bold;  text-decoration: underline;">Institute Location</span><br>
+    <span style="font-weight: bold">Address: </span>{{i.location.address}}<br>
+    <span style="font-weight: bold">City: </span>{{i.location.city}}<br>
+    <span style="font-weight: bold">State: </span>{{i.location.state}}<br>
+    <span style="font-weight: bold">Pin: </span>{{i.location.pin_code}}<br>
+  </div>
+
+  <div class="col-md-2"><p><span style="font-weight: bold;  text-decoration: underline;">Institute Rating: </span> <br>{{i?.rating}}</p></div>
+  <div class="col-md-2"><button class="btn btn-info" ><a [routerLink]="['/booked']">Book Now</a></button></div>
+
+</div>

@@ -1,0 +1,103 @@
+<div class="container">
+  <div [hidden]="submitted">
+    <h2>Patient Profile</h2>
+    <form *ngIf="active" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" >
+      <div class="form-group">
+        <label for="first_name">First Name</label>
+        <input type="text" class="form-control" placeholder="Enter Your First Name" required
+               [(ngModel)]="contact.first_name" name="first_name" id =first_name>
+
+
+      </div>
+      <div class="form-group">
+        <label for="last_name">Last Name</label>
+        <input type="text" class="form-control" placeholder="Enter Your Last Name"
+               [(ngModel)]="contact.last_name" name="last_name" id="last_name">
+      </div>
+
+      <!--<image-upload-->
+      <!--[max]="1"-->
+      <!--[url]="'example.com/images/upload'"-->
+      <!--[headers]="[-->
+      <!--{header: 'Authorization', value: 'MyToken'}-->
+      <!--]"-->
+      <!--[buttonCaption]="'Select Images!'"-->
+      <!--[dropBoxMessage]="'Drop your images here!'"-->
+      <!--(onFileUploadFinish)="imageUploaded($event)"-->
+      <!--(onRemove)="imageRemoved($event)"-->
+      <!--(isPending)="disableSendButton($event)"-->
+      <!--&gt;</image-upload>-->
+      <div class="form-group">
+        <label for="mobile">Mobile</label>
+        <input type="number" class="form-control" placeholder="Enter Your Phone Number"
+               [(ngModel)]="contact.mobile" name="mobile" id="mobile">
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender</label><br>
+        <form>
+          <input type="radio" name="gender" value="male" checked [(ngModel)]="contact.gender" id="gender"> Male<br>
+          <input type="radio" name="gender" value="female" [(ngModel)]="contact.gender" > Female<br>
+          <input type="radio" name="gender" value="other" [(ngModel)]="contact.gender"> Other<br>
+        </form>
+
+
+      </div>
+
+      <div class="form-group">
+        <label for="dob">Date of Birth</label>
+        <input type="date" class="form-control" placeholder="Enter Your Date of Birth"
+               [(ngModel)]="contact.dob" name="dob" id="dob">
+
+
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" class="form-control" placeholder="Enter Your Address"
+               [(ngModel)]="contact.address" name="address" id="address"
+
+        >
+      </div>
+
+      <div class="form-group">
+        <label >Blood Group</label><br>
+        <form>
+          <input type="radio" name="blood_grp" value="A+" checked [(ngModel)]="contact.blood_grp"> A+<br>
+          <input type="radio" name="blood_grp" value="A-" [(ngModel)]="contact.blood_grp"> A-<br>
+          <input type="radio" name="blood_grp" value="B+" checked [(ngModel)]="contact.blood_grp"> B+<br>
+          <input type="radio" name="blood_grp" value="B-" checked [(ngModel)]="contact.blood_grp"> B-<br>
+          <input type="radio" name="blood_grp" value="O+" checked [(ngModel)]="contact.blood_grp"> O+<br>
+          <input type="radio" name="blood_grp" value="O-" checked [(ngModel)]="contact.blood_grp"> O-<br>
+          <input type="radio" name="blood_grp" value="AB+" checked [(ngModel)]="contact.blood_grp"> AB+<br>
+          <input type="radio" name="blood_grp" value="AB-" checked [(ngModel)]="contact.blood_grp"> AB-<br>
+          <input type="radio" name="blood_grp" value="Don't know" checked [(ngModel)]="contact.blood_grp">Don't know<br>
+        </form>
+
+
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="text" class="form-control" placeholder="Enter Your E-mail"
+                 [(ngModel)]="contact.email" name="email" id="email">
+        </div>
+
+        <div class="form-group">
+          <label for="aadhar">Aadhar</label>
+          <input type="text" class="form-control" placeholder="Enter Your Aadhar"
+                 [(ngModel)]="contact.aadhar" name="aadhar" id="aadhar"
+
+          >
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!contactForm.form.valid">Save</button>
+      </div>
+      <div [hidden]="!submitted">
+
+
+      </div>
+
+
+    </form>
+  </div>
+</div>
+

@@ -1,0 +1,22 @@
+<div *ngIf="!keysent" style="align-content: center; margin: 50px">
+  <button class="btn btn-primary" (click)="onStarChat()">Start Chat</button>
+</div>
+<div *ngIf="keysent">
+
+  <input type="text" [(ngModel)]="otherId" hidden>
+
+  <button class="btn btn-info" (click)="onConnect()">Click to Connect</button>
+</div>
+<div align="center">
+  <object class="embed-responsive-item">
+    <video #myVideo style=" border:4px dashed rosybrown; "></video>
+  </object>
+</div>
+<div style="text-align: center; margin: 40px" >
+  <label>
+    <input type="text" style="text-align: center" #input>
+    <button class="btn btn-primary" (click)="sendPrescription(input.value)">Send Prescription</button>
+    <br>
+  </label>
+</div>
+
